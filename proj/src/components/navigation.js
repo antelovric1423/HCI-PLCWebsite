@@ -2,16 +2,27 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Navigation = ({ menuItems }) => {
-    return (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          alignContent: "center",
-          justifyContent: "center",
-        }}
-      >
-        {menuItems.map(({ path, text }, i) => (
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        alignContent: "center",
+        justifyContent: "center",
+      }}
+    >
+      {menuItems.map(({ path, text }, i) => (
+        <Link
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+            backgroundColor: "#e2eadb",
+          }}
+          activeStyle={{
+            backgroundColor: "#c4d1b8",
+          }}
+          to={path}
+        >
           <div
             key={i}
             style={{
@@ -22,21 +33,14 @@ const Navigation = ({ menuItems }) => {
               height: "65px",
               paddingLeft: "0.5rem",
               paddingRight: "0.5rem",
-              backgroundColor: document.location.pathname === path ? "#c4d1b8" : "#e2eadb",
             }}
           >
-            <Link
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-              }}
-              to={path}
-            >
-              {text}
-            </Link>
+            {text}
           </div>
-        ))}
-      </div>)
+        </Link>
+      ))}
+    </div>
+  )
 }
 
 export default Navigation
