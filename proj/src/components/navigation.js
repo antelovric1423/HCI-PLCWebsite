@@ -2,8 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Navigation = ({ menuItems }) => {
-  console.log(window.innerWidth)
-  if (window.innerWidth >= 730) {
     return (
       <div
         style={{
@@ -39,10 +37,6 @@ const Navigation = ({ menuItems }) => {
           </div>
         ))}
       </div>)
-  }
-  else
-    return (<div></div>)
-
 }
 
 export default Navigation
