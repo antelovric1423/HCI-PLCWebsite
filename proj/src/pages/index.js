@@ -38,6 +38,22 @@ const IndexPage = () => {
         <p>Welcome to Human computer interaction.</p>
       </Bubble>
 
+      <Bubble>
+        <h2>The scoville scale</h2>
+        <p>The scoville scale is the way heat levels in peppers are calculated,
+          and the following image shows how the most popular peppers are placed on the scale.</p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center"
+          }}>
+          <img alt="ScovilleScale"
+            src={require("../images/ScovilleScale.png")}
+            style={{
+            }} />
+        </div>
+      </Bubble>
+
     </Layout>
   )
 }

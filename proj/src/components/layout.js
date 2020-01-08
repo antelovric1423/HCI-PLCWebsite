@@ -47,6 +47,7 @@ const Layout = ({ children }) => {
             style={{
               display: "flex",
               height: "65px",
+              flexShrink: "0"
             }}
           >
             <img src={require("../images/logo.jpg")}
