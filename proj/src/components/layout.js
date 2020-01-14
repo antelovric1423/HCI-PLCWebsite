@@ -6,6 +6,7 @@
  */
 
 import React from "react"
+import { useMediaQuery } from "react-responsive"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
@@ -13,6 +14,9 @@ import Navigation from "./navigation"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const bigTitle = useMediaQuery({
+    query: "(min-width: 375px)",
+  })
   const data = useStaticQuery(graphql`
     {
       site {
@@ -31,7 +35,7 @@ const Layout = ({ children }) => {
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
+          padding: `0`,
           paddingTop: 0,
           paddingBottom: 0,
         }}
@@ -61,13 +65,14 @@ const Layout = ({ children }) => {
                 textDecorationColor: "#ff00ff",
                 margin: "0 auto",
                 display: "flex",
-                height: "65px",
                 alignContent: "center",
                 alignItems: "center",
+                height: "65px",
                 minWidth: "165px"
               }}
             >
-              <h2 style={{ marginBottom: "0px" }}>Pepper Enthusiast's</h2>
+              {bigTitle && <h2 style={{ marginBottom: "0px" }}>Pepper Enthusiast's</h2>}
+              {!bigTitle && <h3 style={{ marginBottom: "0px" }}>Pepper Enthusiast's</h3>}
             </div>
           </div>
 
