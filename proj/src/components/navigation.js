@@ -1,8 +1,9 @@
 import React from "react"
+import { useMediaQuery } from "react-responsive"
 import { useRef, useState } from "react"
 import { Link } from "gatsby"
 import more from "../images/more.svg"
-import { useResponsiveMenu, useOnOutsideEvent } from "../hooks/index"
+import { useOnOutsideEvent } from "../hooks/index"
 
 const NavLink = ({ ...prop }) => (
   <Link
@@ -14,12 +15,10 @@ const NavLink = ({ ...prop }) => (
       paddingLeft: "0.5rem",
       paddingRight: "0.5rem",
     }}
-
     activeStyle={{
       backgroundColor: "#c4d1b8",
     }}
-  >
-  </Link>
+  ></Link>
 )
 
 const VisibleNavLink = ({ ...prop }) => {
@@ -35,7 +34,6 @@ const VisibleNavLink = ({ ...prop }) => {
 }
 
 const HiddenNavLink = ({ ...prop }) => {
-
   return (
     <NavLink
       {...prop}
@@ -69,7 +67,7 @@ const MoreButton = ({ onClick, width = 50 }) => (
         stroke: "red",
         width: "auto",
         maxHeight: "35px",
-        margin: "0"
+        margin: "0",
       }}
     />
   </div>
@@ -110,13 +108,13 @@ const HiddenItems = ({
         position: "absolute",
         border: "1px solid #85a368",
         borderTop: "0",
-        top: menu.offset,
+        top: "65px",
         p: 2,
         zIndex,
         minWidth,
       }}
     >
-      {menu.hiddenItems.map(menuItem => (
+      {menu.map(menuItem => (
         <HiddenNavLink key={menuItem.path} to={menuItem.path}>
           {menuItem.text}
         </HiddenNavLink>
@@ -128,9 +126,12 @@ const HiddenItems = ({
 const Nav = ({ menuItems }) => {
   const containerRef = useRef(null)
   const [open, setOpen] = useState(false)
-  const { menu } = useResponsiveMenu({ containerRef, menuItems })
-
-  const isHiddenEmpty = menu.hiddenItems.length === 0
+  const showHidden = useMediaQuery({
+    query: "(max-width: 899px)",
+  })
+  const showVisible = useMediaQuery({
+    query: "(min-width: 900px)",
+  })
 
   const handleMoreClick = () => setOpen(true)
   const handleOutsideClick = () => setOpen(false)
@@ -147,12 +148,11 @@ const Nav = ({ menuItems }) => {
         overflowX: "auto",
       }}
     >
-      <VisibleItems visibleItems={menu.visibleItems} />
-      {!isHiddenEmpty && <MoreButton onClick={handleMoreClick} />}
-      {!isHiddenEmpty &&
-        (open && (
-          <HiddenItems menu={menu} handleOutsideClick={handleOutsideClick} />
-        ))}
+      {showVisible && <VisibleItems visibleItems={menuItems} />}
+      {showHidden && <MoreButton onClick={handleMoreClick} />}
+      {showHidden && open && (
+        <HiddenItems menu={menuItems} handleOutsideClick={handleOutsideClick} />
+      )}
     </nav>
   )
 }
