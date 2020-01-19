@@ -4,18 +4,20 @@ import Bubble from "../components/Bubble"
 
 import "./layout.css"
 
-const Pepper = ({ source, name, }) => {
+const Pepper = ({ className, source, name, }) => {
     return (
-        <Bubble>
+        <Bubble className={className}>
             <img alt={name} src={source}
                 style={{
                     width: "150px",
                     height: "150px",
                     marginBottom: "0px"
                 }} />
-            <div style={{
-                width: "150px", textAlign: "center"
-            }}>{name}</div>
+            <div
+                className="name"
+                style={{
+                    width: "150px", textAlign: "center"
+                }}>{name}</div>
         </Bubble>
     )
 }

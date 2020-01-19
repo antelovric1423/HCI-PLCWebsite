@@ -10,9 +10,10 @@ import PropTypes from "prop-types"
 
 import "./layout.css"
 
-const Bubble = ({ children }) => {
+const Bubble = ({ className = "", children }) => {
   return (
     <div
+      className={className}
       style={{
         margin: "1rem",
         backgroundColor: "#e2eadb",
