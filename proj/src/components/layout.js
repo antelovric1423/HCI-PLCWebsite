@@ -38,6 +38,7 @@ const Layout = ({ children }) => {
           padding: `0`,
           paddingTop: 0,
           paddingBottom: 0,
+          fontFamily: "Lucida Sans Unicode, Lucida Grande, sans-serif",
         }}
       >
         <header
@@ -64,6 +65,7 @@ const Layout = ({ children }) => {
                 textDecoration: "none",
                 textDecorationColor: "#ff00ff",
                 margin: "0 auto",
+                paddingLeft: "0.4rem",
                 display: "flex",
                 alignContent: "center",
                 alignItems: "center",

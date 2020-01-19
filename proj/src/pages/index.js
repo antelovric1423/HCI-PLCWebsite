@@ -26,11 +26,6 @@ const IndexPage = () => {
           There is also a place to share your recipes, but to share your
           enthusiasm, you first have to log in.
         </p>
-        <p>
-          The MARKET is dedicated for trading/selling any of your products,
-          directly from the person selling it (we do not officiate nor
-          participate in any matter related, nor do we take responsibility).
-        </p>
       </Bubble>
 
       <Bubble>

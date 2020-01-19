@@ -21,10 +21,6 @@ module.exports = {
         path: "/recipes",
       },
       {
-        text: "Market",
-        path: "/marketplace",
-      },
-      {
         text: "Login",
         path: "/login",
       },
