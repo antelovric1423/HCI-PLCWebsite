@@ -21,7 +21,7 @@ module.exports = {
         path: "/recipes",
       },
       {
-        text: "Login",
+        text: "Log in",
         path: "/login",
       },
     ],

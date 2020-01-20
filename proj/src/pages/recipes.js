@@ -6,7 +6,9 @@ import SEO from "../components/seo"
 const Recipes = () => (
   <Layout>
     <SEO title="Recipes" />
-    <h1>Recipes area</h1>
+    <div style={{ display: "flex", margin: "5rem", justifyContent: "center", }}>
+      <h3> 404: Site not found </h3>
+    </div>
   </Layout>
 )
 
