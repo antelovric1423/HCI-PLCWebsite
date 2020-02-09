@@ -16,7 +16,7 @@ const Pepper = () => (
                     flexWrap: "wrap",
                     justifyContent: "space-evenly"
                 }}>
-                    <img alt={"Jalapeno"} src={require("../images/Jalapeno.jpg")}
+                    <img alt={"Jalapeno"} src={require("../images/jalapeno.jpg")}
                         style={{
                             width: "150px",
                             height: "150px",
