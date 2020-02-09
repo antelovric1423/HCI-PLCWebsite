@@ -12,6 +12,7 @@ const Bubble = ({ className = "", children }) => {
         backgroundColor: "#e2eadb",
         borderRadius: "5px",
         padding: "0.4rem",
+        transition: "transform .2s"
       }}
     >
       {children}

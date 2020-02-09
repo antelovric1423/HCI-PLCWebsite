@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
           padding: `0`,
           paddingTop: 0,
           paddingBottom: 0,
-          fontFamily: "Lucida Sans Unicode, Lucida Grande, sans-serif",
+          fontFamily: "Verdana, Geneva, sans-serif",
         }}
       >
         <header

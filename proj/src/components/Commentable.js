@@ -14,13 +14,14 @@ const Commentable = ({ likes = 0, comments = 0, children }) => {
                         justifyContent: "space-between",
                         alignItems: "center"
                     }}>
-                    <div>Likes: {likes}</div>
-                    <div>Comments: {comments}</div>
+                    <div style={{ fontSize: "75%" }}>Likes: {likes}</div>
+                    <div style={{ fontSize: "75%" }}>Comments: {comments}</div>
                 </div>
                 <div>
                     <input style={{ marginTop: "1rem", width: "100%" }}
                         id="searchbox"
                         type="text"
+                        disabled="disabled"
                         className="input"
                         placeholder="Log in to comment"
                         onKeyUp={event => {
